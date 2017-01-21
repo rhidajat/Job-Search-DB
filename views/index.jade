@@ -2,11 +2,13 @@ extends layout
 
 block content
     if (!user)
-        a(href="login") Login
-        br
-        a(href="/register") Register
+        .alert.alert-success
+            a(href="login") Login
 
     if (user)
-        p You are currently logged in as #{user.username}
-        a(href="logout") Logout
+        .alert.alert-success
+            p You are currently logged in as #{user.username}
+
+         .alert.alert-danger
+            a(href="logout") Logout
 
