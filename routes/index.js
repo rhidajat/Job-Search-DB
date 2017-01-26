@@ -3,18 +3,20 @@ var passport = require('passport');
 var Account = require('../models/account');
 var router = express.Router();
 
+var title = 'Job Search DB';
+
 router.get('/', function(req, res, next) {
-  res.render('index', { user: req.user });
+    res.render('index', { user: req.user, title: title });
 });
 
 router.get('/register', function (req, res) {
-    res.render('register', { });
+    res.render('register', { title: title });
 })
 
 router.post('/register', function (req, res) {
    Account.register (new Account( { username: req.body.username }), req.body.password, function (err, account) {
        if (err) {
-           return res.render('register', { account: account });
+           return res.render('register', { account: account, title: title });
        }
 
        passport.authenticate('local')(req, res, function () {
@@ -24,7 +26,7 @@ router.post('/register', function (req, res) {
 });
 
 router.get('/login', function (req, res) {
-    res.render('login', {user: req.user});
+    res.render('login', {user: req.user, title: title});
 });
 
 router.post('/login', passport.authenticate('local'), function (req, res) {
