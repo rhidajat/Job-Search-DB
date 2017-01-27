@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    if (!user)
+        .alert.alert-success
+            a(href="login") Login
+
+    if (user)
+        .alert.alert-success
+            p You are currently logged in as #{user.username}
+
+         .alert.alert-danger
+            a(href="logout") Logout
+
