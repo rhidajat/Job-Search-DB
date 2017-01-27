@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    table.table.table-bordered.table-hover
+        thead
+            tr
+                th Username
+                th Some field
+        tbody
+            - for user in users
+                tr
+                    td= user.username
