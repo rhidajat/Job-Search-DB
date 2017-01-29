@@ -14,6 +14,26 @@ a {
     background-color: #2b4a6f;
 }
 
+.bc4 {
+    background-color: #A5373F;
+}
+
 .c6 {
     color: #f9ac33;
+}
+
+.c9 {
+    color: #FE0013;
+}
+
+.rounded-corner {
+    border-radius: 8px;
+}
+
+
+/*
+*   MARGIN AND PADDING
+*/
+.p-32 {
+    padding: 32px;
 }

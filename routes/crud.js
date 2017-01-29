@@ -37,4 +37,15 @@ router.get('/application', function(req, res, next) {
         });
 });
 
+router.get('/application/create', function (req, res, next) {
+    if (!req.user) {
+        res.redirect('/login');
+    }
+
+    res.render('create-application',
+        {
+           title: 'Create Application'
+        });
+})
+
 module.exports = router;
