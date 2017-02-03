@@ -16,9 +16,11 @@ var statusSchema = new Schema({
 var JobApplicationSchema = new Schema({
     companyName: String,
     jobTitle: String,
+    jobDescription: String,
     city: String,
     region: String,
     country: String,
+    url: String,
     comment: String,
     progress: [statusSchema]
 });
